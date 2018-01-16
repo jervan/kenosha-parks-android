@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:segmented="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/filter_bottom_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/filter_cancel_button"
+            android:textColor="@color/colorBackground"
+            android:text="@string/cancel"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/filter_reset_button"
+            android:textColor="@color/colorBackground"
+            android:text="@string/reset"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/filter_apply_button"
+            android:textColor="@color/colorBackground"
+            android:text="@string/apply"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_above="@id/filter_bottom_buttons_layout"
+        android:id="@+id/filter_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/park_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/locationName"/>
+
+            <info.hoang8f.android.segmented.SegmentedGroup
+                android:id="@+id/park_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/park_label"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal"
+                segmented:sc_checked_text_color="@color/colorBackground"
+                segmented:sc_corner_radius="0dp"
+                segmented:sc_tint_color="@color/colorAccent">
+
+                <RadioButton
+                    android:id="@+id/lincoln_button"
+                    style="@style/RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/lincoln"/>
+
+                <RadioButton
+                    android:id="@+id/hobbs_button"
+                    style="@style/RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/hobbs"/>
+
+                <RadioButton
+                    android:id="@+id/roosevelt_button"
+                    style="@style/RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/roosevelt"/>
+
+                <RadioButton
+                    android:id="@+id/all_park_button"
+                    style="@style/RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/all"/>
+
+
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+            <TextView
+                android:id="@+id/distance_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/park_picker"
+                android:layout_marginBottom="8dp"
+                android:text="@string/distance"/>
+
+            <LinearLayout
+                android:id="@+id/distance_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/distance_label"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal">
+
+                <SeekBar
+                    android:id="@+id/distance_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/distance_slider_max_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.1"
+                    android:textAlignment="textEnd"
+                    tools:text="&gt; 20mi"/>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/age_group_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="44dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/age_group_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:text="@string/age_group"/>
+
+                <Spinner
+                    android:id="@+id/age_group_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorAccent"/>
+
+                <!--
+                <TextView
+                    android:id="@+id/age_group_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorAccent"
+                    tools:text="Family"/>
+                    -->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@id/age_group_label"
+                    android:layout_toRightOf="@id/age_group_label"
+                    android:background="@color/colorTextLight"/>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@color/colorTextLight"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:padding="8dp"
+                        android:src="@drawable/edit"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/date_picker_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/distance_layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:text="@string/date"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:id="@+id/start_date_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/rectangle_stroke"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/start_date_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="8dp"
+                        android:textAlignment="center"
+                        tools:text="Today"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/calendar_blank"/>
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@color/colorTextLight"/>
+
+                <LinearLayout
+                    android:id="@+id/end_date_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/rectangle_stroke"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/end_date_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="8dp"
+                        android:textAlignment="center"
+                        tools:text="Today"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/calendar_blank"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <CheckBox
+                android:layout_marginTop="32dp"
+                android:id="@+id/reoccurring_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date_picker_layout"
+                android:layout_marginBottom="32dp"
+                android:text="@string/is_reoccurring"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

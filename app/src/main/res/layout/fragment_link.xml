@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="?android:attr/actionBarSize"
+        app:titleTextColor="@android:color/white"
+        app:theme="@style/toolbar"
+        app:title="Organizations"/>
+
+    <ScrollView
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+                <ImageView
+                    android:id="@+id/logo1"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/logo1"/>
+                <LinearLayout
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:text="City Of Kenosha Parks Alliance"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="@string/link_kpa_desc"/>
+                    <TextView
+                        android:id="@+id/link1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/colorTextLink"
+                        android:text="@string/visit_website"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <include layout="@layout/separator" />
+
+            <ImageView
+                android:id="@+id/logo2"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:src="@drawable/logo2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="@string/link_kpl_desc"/>
+            <TextView
+                android:id="@+id/link2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textColor="@color/colorTextLink"
+                android:text="@string/visit_website"
+                android:layout_marginBottom="12dp"/>
+
+            <include layout="@layout/separator" />
+
+            <ImageView
+                android:id="@+id/logo3"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:src="@drawable/logo3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="@string/link_they_desc"/>
+            <TextView
+                android:id="@+id/link3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textColor="@color/colorTextLink"
+                android:text="@string/visit_website"
+                android:layout_marginBottom="12dp"/>
+
+            <include layout="@layout/separator" />
+
+            <ImageView
+                android:id="@+id/logo4"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:src="@drawable/logo4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="@string/link_bag_desc"/>
+            <TextView
+                android:id="@+id/link4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorTextLink"
+                android:text="@string/visit_website"
+                android:layout_marginBottom="12dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

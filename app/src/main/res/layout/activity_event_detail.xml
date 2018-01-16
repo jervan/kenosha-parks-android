@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="event"
+            type="edu.uwp.appfactory.eventsmanagement.viewmodel.EventDetailViewModel"/>
+    </data>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/colorBackground"
+                tools:context="edu.uwp.appfactory.eventsmanagement.EventDetailActivity">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:background="@color/colorPrimary"
+                    android:layout_height="200dp"
+                    app:image="@{event.image}"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="22dp"
+                    android:background="@android:color/white"
+                    >
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{event.title}"
+                        android:textSize="18sp"
+                        android:layout_marginRight="50dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"/>
+                    <!-- TODO implement price -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="$25"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/title"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="16dp"
+                        android:text="@{event.description}"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:background="@android:color/white"
+                    android:visibility="gone"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_indoor"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@{event.isIndoors}"
+                            android:textSize="12sp"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+
+                        android:layout_weight="1">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_family"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="Family"
+                            android:textSize="12sp"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:visibility="@{event.showDistance}">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_car"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@{event.distance}"
+                            android:textSize="12sp"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_time"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:text="@{event.startTime}"
+                            android:textSize="12sp"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <include layout="@layout/view_item_detail_location"
+                    app:locationName = "@{event.locationViewModel}"
+                    />
+
+                <edu.uwp.appfactory.eventsmanagement.Components.DetailItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:header_icon="@drawable/ic_date_time"
+                    app:title="Date and Times"
+                    android:layout_marginTop="2dp"
+                    app:content = "@{event.dateAndTime}"
+                    app:type="text"
+                    />
+
+                <edu.uwp.appfactory.eventsmanagement.Components.DetailItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:header_icon="@drawable/ic_registration_ticket"
+                    app:title="Registration / Ticket"
+                    android:layout_marginTop="2dp"
+                    app:content = "@{event.registrationMethod}"
+                    app:type="text"
+                    android:visibility="@{event.showRegistration}"/>
+
+                <edu.uwp.appfactory.eventsmanagement.Components.DetailItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:header_icon="@drawable/ic_schedule"
+                    android:layout_marginTop="2dp"
+                    app:title="Schedules"
+                    app:type="schedule"
+                    app:content="@{event.schedule}"
+                    android:visibility="@{event.showSchedule}"/>
+
+                <edu.uwp.appfactory.eventsmanagement.Components.DetailItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:header_icon="@drawable/ic_organization"
+                    android:layout_marginTop="2dp"
+                    app:title="Organization"
+                    app:content="@{event.organization}"
+                    app:type="text"
+                    android:visibility="@{event.showOrganization}"/>
+
+
+                <edu.uwp.appfactory.eventsmanagement.Components.DetailItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:header_icon="@drawable/ic_phone"
+                    app:title="Contact"
+                    android:layout_marginTop="2dp"
+                    app:type="text"
+                    app:content = "@{event.contact}"
+                    android:visibility="@{event.showContact}"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/ic_calendar_add"
+            android:layout_margin="16dp"
+            android:onClick="@{event::addEventToCalendar}"
+            />
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

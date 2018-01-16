@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:id="@+id/content_text"
+    android:layout_width="wrap_content"
+    android:paddingLeft="60dp"
+    android:paddingBottom="5dp"
+    android:layout_height="wrap_content"
+    android:text="Wed 6pm to 12pm"
+    android:textColor="@android:color/black"
+    android:autoLink="web|phone"
+    android:textSize="16sp"
+    android:lineSpacingMultiplier="1.3"
+    android:textColorLink="@color/colorTextLink"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

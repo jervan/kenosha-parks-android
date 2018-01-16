@@ -1,0 +1,70 @@
+#----------------------------------------------------------#
+# File:     .gitlab-ci.yml
+# Project:
+# Author:   UWP AppFactory
+#
+# Template: android.gitlab-ci.yml
+#
+# Defines the continuous integration scripts for testing and deploying the project.
+#----------------------------------------------------------#
+
+# Define the Docker image
+image: jangrewe/gitlab-ci-android
+
+
+# Define local variables
+# variables:
+
+
+
+# Cache builds
+cache:
+    paths:
+        - .gradle/
+
+
+# Define the stages
+stages:
+    - build
+    - test
+
+
+# Builds the application
+build:
+    stage: build
+    before_script:
+        - chmod +x ./gradlew
+    script:
+        - ./gradlew assembleDebug
+    artifacts:
+        paths:
+            - app/build/outputs/
+    tags:
+        - docker
+
+
+# Runs the unit tests
+unit tests:
+    stage: test
+    before_script:
+        - chmod +x ./gradlew
+    script:
+        - ./gradlew test
+    tags:
+        - docker
+
+
+# Runs the functional tests
+functional tests:
+    stage: test
+    script:
+        - echo "Not implemented yet"
+        # Starts the Android emulator
+        # - android-sdk-linux/tools/emulator64-x86 -avd test -no-window -no-audio &
+        # - adb shell input keyevent 82
+        # - ./gradlew cAT
+    tags:
+        - docker
+
+
+# end .gitlab-ci.yml

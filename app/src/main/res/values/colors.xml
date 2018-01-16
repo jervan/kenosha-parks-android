@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#00254B</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryLight">#2F80ED</color>
+    <color name="colorAccent">#F7580A</color>
+    <color name="colorEvent">#F7580A</color>
+    <color name="colorTextDetailTitle">#50000000</color>
+    <color name="colorTextLink">#2F80ED</color>
+
+    <!--These are the colors for viewpager's dot indicators-->
+    <color name="dot_default">#75ffffff</color>
+    <color name="dot_selected">#ffffff</color>
+    <color name="colorHomeDotDeselected">#a3b2c1</color>
+
+
+    <color name="colorText">#000000</color>
+    <color name="colorTextLight">#828282</color>
+    <color name="colorBackground">#E9EEF3</color>
+
+    <color name="translucent_scrim_top">#56000000</color>
+    <color name="translucent_scrim_top_center">#0F000000</color>
+
+
+
+    <color name="colorActivatedNavigationIcon">#f5f5f5</color>
+    <color name="colorUnactivatedNavigationIcon">#73f2f2f2</color>
+
+
+</resources>
